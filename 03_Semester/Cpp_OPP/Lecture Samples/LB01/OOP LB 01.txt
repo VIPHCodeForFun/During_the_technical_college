@@ -1,0 +1,111 @@
+
+#pragma warning (disable: 4996)
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <fstream>
+#include <string>
+
+auto foo() -> double {
+    std::cout << "Hello World!\n";
+    int i = 5;
+    //std::cin >> i;
+    if (std::cin.fail()) {
+        std::cerr << "Failed reading data" << std::endl;
+        return -1;
+    }
+    return 0;
+}
+
+void reference(int& rvar) {
+    rvar = 10000;
+}
+
+int main(int argc, const char* argv[]) {
+    // Auto
+    int i = foo();
+
+    int w1 = 123; // int
+    float w2{ 123.456f }; // float
+    auto w3 = 123.222; // double
+    auto w4 = 'A'; // char
+    auto w5 = u'A'; // utf-16
+    auto w6 = U'A'; // utf-32
+
+    // Strings
+    const char* str1 = "Hello";
+    char str2[20];
+    std::strcpy(str2, str1);
+    std::strcat(str2, " World");
+
+    std::string s1 = "Hello", s2;
+    s2 = s1 + " World";
+    auto len = s2.size();
+
+    // C style Array
+    int arr1[10];
+    int arr2[10]{ 1,2,3,4,5 };
+    int arr3[10]{};
+    int* parr4 = new int[10]{ 1,2,3 };
+    for (int i = 0; i < 10; i++) {
+        std::cout << *(parr4 + i) << " ";
+    }
+    std::cout << std::endl;
+    delete[] parr4;
+
+    // C++ Static/Dynamic Arrays
+    std::array<int, 10> array1{};
+    std::array<int, 10> array2{ 1,2,3,4,5 };
+    auto parray = new std::array<int, 10>();
+    int size = array2.size();
+    delete parray;
+
+    std::vector<double> vector1{};
+    std::vector<double> vector2{ 23.2, -33, 55, -123.2 };
+    std::vector<std::string> vector3{ "Hello", "\n", "World" };
+    vector1.push_back(22.2);
+    vector1.push_back(22.3);
+    vector1.push_back(22.4);
+    vector1.push_back(22.5);
+    vector1.push_back(22.6);
+    if (vector1[0] == 22.2)
+        std::cout << "Success" << std::endl;
+
+    std::vector<std::vector<int>> vecvec{ std::vector<int>{1,2,3}, std::vector<int>{1,2,3}, std::vector<int>{1,2,3} };
+    vecvec[0].push_back(777);
+    vecvec[0].push_back(666);
+    vecvec[1].push_back(555);
+
+    // References
+    int var = 6;
+    int* pvar = &var;
+    *(pvar) = 5;
+    int& rvar = var;
+    reference(var);
+
+    // argv/argc
+    for (int i = 1; i < argc; i++)
+        std::cout << argv[i] << std::endl;
+
+    // Files
+    std::string filePath = "test.txt";
+    std::ifstream file(filePath);
+    if (file.is_open()) {
+        std::string currentLine;
+        while (getline(file, currentLine)) {
+            std::cout << currentLine << std::endl;
+        }
+    }
+    file.close();
+
+    std::ofstream outFile(filePath);
+    std::array<std::array<int, 3>, 3> array3d{ { {1,2,3}, {1,2,3}, {1,2,3} } };
+    for (int i = 0; i < array3d[0].size(); i++) {
+        outFile << array3d[0][i] << std::endl;
+    }
+
+    file.close();
+
+    return 0;
+}

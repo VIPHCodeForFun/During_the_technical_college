@@ -1,0 +1,10 @@
+//#include <random>
+int getRndNr(int start, int ende)
+{
+	std::random_device RND;
+	std::mt19937 rng(RND());
+	std::uniform_int_distribution<std::mt19937::result_type> rnd_NR(start, ende); //range [start, ende]
+
+	//std::cout << rnd_NR(rng) << std::endl;
+	return rnd_NR(rng);
+}

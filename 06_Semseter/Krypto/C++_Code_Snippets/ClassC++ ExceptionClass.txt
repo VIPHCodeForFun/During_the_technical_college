@@ -1,0 +1,11 @@
+#pragma once
+#include <exception>
+
+class MyException : public std::exception
+{
+public:
+	virtual const char* what() const override
+	{
+		return "Exception occured : A negative Value was found in Templatecontainer";
+	}
+};

@@ -1,0 +1,26 @@
+<?php
+/*
+
+    This is what the index.php file should look like in this directory
+    Changed it to index.txt in the repository - only to avoid possibly uploading sensitive data onto the public repository FlexCarver
+
+*/
+//error_reporting(E_ALL);
+require_once('DbConnectClass.php');
+require_once('AppClass.php');
+
+// The local version for the hian theme
+$app = new App( (object)array(
+    'name'    => 'Hian',
+    'version' => '1.0.0',
+    'db'      => (object)array(
+                    "name"        => "hian",
+                    "host"        => "localhost",
+                    "username"    => "root",
+                    "password"    => ""
+                    
+                  )
+
+  ));
+
+$app->run();

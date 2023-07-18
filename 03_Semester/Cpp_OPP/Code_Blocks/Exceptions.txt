@@ -1,0 +1,12 @@
+int elem = 0;
+try 
+{
+	if (elem == 0)
+	{
+		throw std::exception("Trow String");
+	}
+}
+catch (const std::exception& exeption)
+{
+	std::cout << "Catch String " << exeption.what() << std::endl;
+}

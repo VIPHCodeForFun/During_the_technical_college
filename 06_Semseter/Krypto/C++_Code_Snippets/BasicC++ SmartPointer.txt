@@ -1,0 +1,14 @@
+// Bei Smartpointer muss kein Speicher mehr freigegeben werden
+
+// Smartponter Kann nur alleine auf ein Objekt zeigen
+std::unique_ptr<Objekt> U_Pointer = std::make_unique<Objekt>();
+
+// Shared hat einen Zähler 
+std::shared_ptr<Objekt> S_Pointer = std::make_shared<Objekt>();
+
+// Gleich wie Shared nur das er den Zähler nicht erhöht
+std::weak_ptr<Objekt> W_Pinter = std::make_shared<Objekt>();
+
+// Alt
+Objekt* ptr = new Objekt(); //Speicher wird angelegt
+delete ptr;					//speicher wird Freigegeben

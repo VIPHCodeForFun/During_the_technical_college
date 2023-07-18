@@ -1,0 +1,9 @@
+RewriteEngine On
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# for leaving out .php in the api folder and routing all requests to the index.php
+
+RewriteCond %{REQUEST_URI}  !\.php [NC]
+RewriteRule ^api/(.*) api/index.php [L]

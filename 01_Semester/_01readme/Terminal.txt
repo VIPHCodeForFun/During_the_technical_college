@@ -1,0 +1,118 @@
+********************************************************
+******************Terminal Info*************************
+********************************************************
+Pfad anzeigen:
+PS C:\Users\phili\Desktop\ITS-B> ls
+    Verzeichnis: C:\Users\phili\Desktop\ITS-B
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19.09.2020     16:26          54197 a.exe
+-a----        19.09.2020     16:25            126 hw.c
+********************************************************
+Terminal in Visual Studio Code öffnen:
+Reiter-> View -> Terminal
+********************************************************
+Pfad suchen:
+C:\Users\phili\Desktop>
+C:\Users\phili\Desktop>cd ITS-B
+C:\Users\phili\Desktop\ITS-B>
+********************************************************
+Compilieren:
+C:\Users\phili\Desktop\ITS-B>gcc 	--> a.c
+gcc -o main --> main.c				gcc -o main ./main.c
+gcc -Wall -o main Alle Warnungen anzeigen
+(gespeichertes Programm "hw.c")
+********************************************************
+Ausführen:
+C:\Users\phili\Desktop\ITS-B>./"Compiliertes Programm (a)".exe
+C:\Users\phili\Desktop\ITS-B>./a.exe
+********************************************************
+********************************************************
+******Die wichtigsten CMD-Befehle in Windows************
+********************************************************
+********************************************************
+Grundlagen / Navigation
+
+cd	wechselt das Verzeichnis
+cd D:\Pfad	wechselt in das Verzeichnis D:\Pfad
+cd..	wechselt ein Verzeichnis in der Ordner-Hirarchie nach oben
+cd\	wechselt in das Root-Verzeichnis des aktuellen Laufwerks
+cls	CMD-Bildschirm leeren
+dir	zeigt den Inhalt des aktuellen Verzeichnisses an
+dir /p	listet den Inhalt seitenweise auf
+dir /s	listet den Inhalt samt Unterverzeichnissen auf
+dir /w	zeigt nur Datei- und Verzeichnisnamen an
+tree	Ordnerstruktur grafisch anzeigen
+********************************************************
+********************************************************
+Dateien & Verzeichnisse
+
+mkdir			erstellt neues Verzeichnis
+mkdir „Mein Ordner“	erstellt das Verzeichnis „Mein Ordner“ im aktuellen Verzeichnis
+rmdir			löscht leeres Verzeichnis
+rmdir „Mein Ordner“	löscht das Verzeichnis „Mein Ordner“, sofern leer
+rmdir /s		löscht ein nicht-leeres Verzeichnis
+rmdir /s „Mein Ordner“	löscht das nicht-leere Verzeichnis „Mein Ordner“
+move			verschiebt Dateien und Ordner
+move Bild.jpg „Mein Ordner“	verschiebt die Datei Bild.jpg in das Verzeichnis „Mein Ordner“
+copy	kopiert Dateien
+copy Text.txt „Mein Ordner“	Kopiert die Datei Text.txt in das Verzeichnis „Mein Ordner“
+del	löscht eine odere mehrere Dateien
+del Bild.jpg	löscht die Datei Bild.jpg
+del *.jpg	löscht alle JPG-Dateien im aktuellen Verzeichnis
+expand	Dateien entpacken
+fc	vergleicht Dateien und zeigt Unterschiede an
+rename	benennt Dateien um
+replace	ersetzt Dateien
+type	zeigt Inhalt von Textdateien an
+attrib	zeigt die Dateiattribute an (schreibgeschützt, versteckt, sichtbar, ...)
+attrib +R	setzt Schreibschutz auf Datei
+attrib -R	deaktiviert Schreibschutz einer Datei
+attrib +H	versteckt eine Datei
+attrib -H	macht Datei sichtbar
+********************************************************
+********************************************************
+Fortgeschritten
+
+call	ruft eine Batchdatei von einer anderen aus auf
+color	Schriftfarbe der CMD ändern
+color 3	Wechselt Schriftfarbe auf Türkis („help color“ eingeben für alle Farben)
+date	zeigt und ändert Datum
+echo	gibt einen Text aus
+echo Hallo	gibt „Hallo“ als Text aus
+echo off	schaltet Befehlsanzeige aus
+echo on	schaltet Befehlsanzeige ein
+exit	schließt die Eingabeaufforderung oder eine geöffnete Batch-Datei
+find	sucht in einer oder mehreren Dateien nach einer Zeichenfolge
+hostname	zeigt Computernamen an
+pause	hält die Ausführung einer Batch-Datei an und zeigt Meldung „Drücken Sie eine beliebige Taste...“
+reg	erstellt, liest, importiert oder exportiert Registrierungseinträge
+runas	führt Befehl als anderer Benutzer aus
+shutdown	fährt den PC herunter oder startet ihn neu
+sort	sortiert die Bildschirmausgabe
+start	startet Programm oder Fenster
+systeminfo	zeigt alle wichtigen System-Informationen an
+taskkill	beendet Prozesse
+tasklist	zeigt Programme und zugehörige Tasks an
+time	zeigt und ändert die Uhrzeit
+timeout	wartet eine bestimmte Zeit in Sekunden
+title	legt einen Titel für die EIngabeaufforderung fest
+ver	zeigt die Betriebssystem-Version an
+w32tm	stellt die Zeitzone, Zeitserver und Zeitsynchronisation ein
+********************************************************
+********************************************************
+Netzwerk
+
+ftp		überträgt Dateien zu einem FTP-Server
+ftype		zeigt Dateityp und Zuordnung an
+getmac		zeigt die MAC-Adresse an
+ipconfig	zeigt die IP-Netzwerkeintellungen an
+netsh		konfiguriert die Netzwerkkomponenten
+netstat		zeigt TCP/IP-Verbindungen und ihren Status an
+nslookup	fragt den DNS-Server ab
+pathping	testet die Verbindung zu einer bestimmten IP-Adresse
+ping		pingt einen Rechner oder Server im Netzwerk oder im Internet an
+route		zeigt Netzwerk-Routing-Tabelle an und fügt statische Routen hinzu
+telnet		baut eine Telnet-Verbindung auf
+tftp		überträgt Dateien zu einem FFTP-Server
+tracert		verfolgt Routen ähnlich wie patchping

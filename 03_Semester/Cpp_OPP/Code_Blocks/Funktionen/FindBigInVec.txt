@@ -1,0 +1,25 @@
+auto lambda = [](std::vector<std::shared_ptr<int>> vec)
+{
+	std::vector<int> temp;
+
+	for (int i = 0; i < 3; i++) // Anzahl der Variablen
+	{
+		int _temp = 0; //Merken des Inhaltes
+		int index = 0; //Merken der Position
+
+		for (int j = 0; j < vec.size(); j++)
+		{
+			if (*vec[j] % 2 == 0) // ==0 Gerade  !=0 Ungerade
+			{
+				if (_temp < *vec[j])
+				{
+					_temp = *vec[j];
+					index = j;
+				}
+			}
+		}
+		temp.push_back(_temp);
+		*vec[index] = 0;
+	}
+	return temp;
+};

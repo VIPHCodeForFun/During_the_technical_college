@@ -1,0 +1,50 @@
+﻿  Complex.cpp
+  FixedQueue.cpp
+  OOP21_B_11_main.cpp
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(65,22): warning C4244: "=": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(52): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "VidP::Complex<int> VidP::Complex<int>::operator /(VidP::Complex<int> &)"
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(51): message : Siehe Verweis auf die gerade kompilierte Instanziierung "VidP::Complex<int> VidP::Complex<int>::operator /(VidP::Complex<int> &)" der Funktions-Vorlage.
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(32): message : Siehe Verweis auf die gerade kompilierte Klasse Vorlage-Instanziierung "VidP::Complex<int>".
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(48,22): warning C4244: "=": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(44): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "VidP::Complex<int> VidP::Complex<int>::operator *(VidP::Complex<int> &)"
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(50): message : Siehe Verweis auf die gerade kompilierte Instanziierung "VidP::Complex<int> VidP::Complex<int>::operator *(VidP::Complex<int> &)" der Funktions-Vorlage.
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(40,22): warning C4244: "=": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(36): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "VidP::Complex<int> VidP::Complex<int>::operator -(VidP::Complex<int> &)"
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(49): message : Siehe Verweis auf die gerade kompilierte Instanziierung "VidP::Complex<int> VidP::Complex<int>::operator -(VidP::Complex<int> &)" der Funktions-Vorlage.
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(32,22): warning C4244: "=": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(28): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "VidP::Complex<int> VidP::Complex<int>::operator +(VidP::Complex<int> &)"
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(48): message : Siehe Verweis auf die gerade kompilierte Instanziierung "VidP::Complex<int> VidP::Complex<int>::operator +(VidP::Complex<int> &)" der Funktions-Vorlage.
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(22,17): warning C4244: "=": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\Complex.h(18): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "VidP::Complex<int>::Complex(T,T)"
+          with
+          [
+              T=int
+          ]
+C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\OOP21_B_11_main.cpp(32): message : Siehe Verweis auf die gerade kompilierte Instanziierung "VidP::Complex<int>::Complex(T,T)" der Funktions-Vorlage.
+          with
+          [
+              T=int
+          ]
+  DComplex.cpp
+  Code wird generiert...
+  ConsoleApplication1.vcxproj -> C:\Users\phili\Desktop\FH_Salzburg\_SEMESTER_3\Objektorientirte_Programmierung\Labor\Aufgaben\OOP21_B_11_Vidmar_Philipp\OOP_LB_11_ Aufgaben\x64\Debug\OOP21_B_11_Vidmar_Philipp.exe

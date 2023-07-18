@@ -1,0 +1,17 @@
+//#include <iostream>
+//#include <string>
+friend std::ostream& operator<<(std::ostream& os, const Complex<T>& str)
+{
+	os << std::to_string(str.a) + "+" + std::to_string(str.b) + "j" + " |z|=" + std::to_string(str.betrag);
+	return os;
+}
+
+friend std::istream& operator>>(std::istream& is, Complex<T>& nr)
+{
+	is >> nr.a;
+	std::cin.ignore(10000, '+');
+	is >> nr.b;
+	std::cin.clear();
+	std::cin.ignore(10000, '\n');
+	return is;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        Informationen zur Seite
+        Einbinden von CSS und JS
+          <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+        Sichtbarer Inhalt der Seite
+</body>
+
+</html>
+
+* steht für alles
+classen "."         
+id                  wird für JS verwendet
+
+CSS Stylet html
+JS Bewegt animiert CSS
+
+<div> <div/> Zusammenfassung von Elementen
+--------------------------------------------------------------
+Framework stellt uns dateien  fertig zur verfügung
+ 
+auf Client Seite:
+        bootstrap 4 --> CSS Framework
+        JQuery --> JS Framework
+
+
+Serverseite
+PHP erstellt eine HTML seite und schickt diese an den Client

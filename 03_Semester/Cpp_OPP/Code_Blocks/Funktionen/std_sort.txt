@@ -1,0 +1,27 @@
+//#include <algorithm>    // std::sort
+//für std::vector<Objekt>
+void sort()
+{
+	std::sort(vec.begin(), vec.end()); //(operator <):
+}
+
+//LAMBDA für die ermittlung der groeßten drei Elemente eines Vektors
+auto lambda = [](auto vec) 
+{
+	std::vector<int> test;
+	std::sort(vec.begin(), vec.end(), [](auto a, auto b) {return (*a > *b); });
+	for (auto& item : vec) 
+	{
+		if (*item % 2 == 0 && test.size() < 3) 
+		{
+			test.push_back(*item);
+		}
+	}
+	return test;
+};
+
+/*auto testVec = lambda(vec1);
+for (auto& elem : testVec) 
+{
+	std::cout << elem << std::endl;
+}*/

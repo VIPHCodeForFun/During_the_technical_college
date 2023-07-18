@@ -1,0 +1,47 @@
+/* Ein Beispiel für einen Copy-Konstruktor in C++:
+
+In diesem Beispiel wird die Klasse MyClass definiert, die einen Konstruktor und einen 
+Copy-Konstruktor hat. Im Hauptprogramm wird zunächst eine Instanz von MyClass namens 
+obj1 erstellt. Dann wird eine zweite Instanz obj2 erstellt und dabei obj1 als Argument 
+an den Copy-Konstruktor übergeben.
+
+Der Copy-Konstruktor erstellt eine neue Instanz von MyClass und initialisiert sie mit 
+den Werten der übergebenen Instanz other. Auch hier gibt der Copy-Konstruktor nur eine 
+Meldung aus, um zu zeigen, dass er aufgerufen wurde.
+
+void myFunction(MyClass obj) {
+    // ...
+}
+
+MyClass obj1;           // Konstruktor wird aufgerufen
+myFunction(obj1);       // Copy-Konstruktor wird aufgerufen
+
+MyClass obj2 = obj1;   // Copy-Konstruktor wird aufgerufen
+MyClass obj3(obj1);    // Copy-Konstruktor wird aufgerufen
+*/
+
+#include <iostream>
+#include <string>
+ 
+class MyClass 
+{
+public:
+    // Konstruktor
+    MyClass() 
+	{
+        std::cout << "Konstruktor wurde aufgerufen." << std::endl;
+    }
+ 
+    // Copy-Konstruktor
+    MyClass(const MyClass& other) 
+	{
+        std::cout << "Copy-Konstruktor wurde aufgerufen." << std::endl;
+    }
+};
+ 
+int main() 
+{
+    MyClass obj1; // Konstruktor wird aufgerufen
+    MyClass obj2(obj1); // Copy-Konstruktor wird aufgerufen
+    return 0;
+}

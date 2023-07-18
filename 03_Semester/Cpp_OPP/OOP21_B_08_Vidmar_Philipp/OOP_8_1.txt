@@ -1,0 +1,56 @@
+// OOP21_B_08_Vidmar_Philipp.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
+
+#include <iostream>
+#include <sstream>
+#include <ostream>
+#include <string>
+
+
+class Complex {
+public:
+
+	Complex() = default;
+	~Complex() = default;
+	Complex operator+(Complex& toAdd)
+	{
+		this->a = this->a + toAdd.a;
+		this->b = this->b + toAdd.b;
+		return (*this);
+	}
+	friend std::ostream& operator<<(const std::ostream& os, const Complex& str);
+	int a, b;
+
+	void input(std::string s) //5+4j //3+-5j
+	{
+		std::istringstream istr(s);
+		std::string strRe;
+		std::string strIm;
+
+		getline(istr, strRe, '+');
+		getline(istr, strIm, 'j');
+
+		a = std::stoi(strRe);
+		b = std::stoi(strIm);
+	}
+};
+
+std::ostream& operator<<(std::ostream& os, const Complex& str)
+{
+	os << std::to_string(str.a) + "+" + std::to_string(str.b) + "j";
+	return os;
+}
+
+int main()
+{
+	Complex x, y;
+	std::string s1, s2;
+	std::cin >> s1;
+	std::cin >> s2;
+	x.input(s1);
+	y.input(s2);
+	Complex z = x + y;
+	std::cout << z << std::endl;
+
+	return 0;
+
+}

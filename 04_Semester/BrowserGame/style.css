@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    border: 0;
+}
+.Spielfeld
+{
+    display: block;
+    position: relative;
+
+    width: 99%;
+    height: 90vh;
+    border: 5px solid black;
+
+    background-color: aqua;
+}
+.Block
+{
+    display: block;
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    border: 3px solid black;
+
+    background-color: tomato;
+/*
+    top: 100 px;
+    left: 200px;
+*/
+}

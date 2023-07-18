@@ -1,0 +1,2 @@
+100 
+Das ist der String der in die Datei Kommt .

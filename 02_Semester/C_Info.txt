@@ -1,0 +1,39 @@
+################################    DATEIPFAD ausgeben   ################################
+int main(int argc, char *argv[])
+{
+  printf("%s", argv[0]);
+}
+################################    Ouput   ################################ 
+printf("\nresult: %.*lf", comma, result);   gibt mit int comma Kommerstellen aus. 
+################################    Input   ################################ 
+scanf("%10s",x);               liest 10 Zeichen ein
+scanf(„%[^.]“,x);              liest ein bis ein Zeichen "." gefunden wird
+scanf(„%1[JNjn]“,x);           "Eins der 4" Zeichen kann eingegeben werden 
+scanf(„%[a-f]“,x);             Zeichen von "a bis f" können eingegeben werden
+################################    LOOPS   ################################ 
+for( i ; i < 10  ; i++ ) { }        break;      continue;
+while( n < 10 ) { }                 break;      continue;
+do ( n < 10 ) { } while;            break;      continue;
+################################    IF ELSE   ################################ 
+if ( n < 10 ) { }
+else { }
+################################    Data Types   ################################ 
+char	                1 byte 	                             -128 to 127 or 0 to 255
+unsigned char	        1 byte	                             0 to 255
+signed char	        1 byte	                             -128 to 127
+int	                4 bytes	                             -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
+unsigned int	        2 or 4 bytes                         0 to 65,535 or 0 to 4,294,967,295
+short	                2 bytes	                             -32,768 to 32,767
+unsigned short	      	2 bytes	                             0 to 65,535
+long	                8 bytes or (4bytes for 32 bit OS)    -9223372036854775808 to 9223372036854775807
+unsigned long	        8 bytes				     0 to 18446744073709551615
+bool                    1 bit                                0 or 1
+################################    Logische Operatoren:   ################################ 
+== (ist gleich)     , <= (ist kleiner gleich), >= (ist größer gleich), != (ist ungleich)
+ && (und)           , || (oder)              , ! (Negation)
+################################    TASTEN SPEICHER:   ################################ 
+# Windows                   Allgemein
+fflush(stdout);
+fflush(stdin);              while ((ch=getchar ()) != '\n' && ch != EOF);
+
+

@@ -1,0 +1,38 @@
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <algorithm>    // std::rotate
+
+std::string& operator<<(std::string& str, int& offset)
+{
+	if (offset > (int)str.size())
+	{
+		offset = offset % (int)str.size();
+	}
+	std::rotate(str.begin(), str.begin() + offset, str.end()); //<<
+	return str;
+}
+std::string& operator>>(std::string& str, int& offset)
+{
+	if (offset > (int)str.size())
+	{
+		offset = offset % (int)str.size();
+	}
+	std::rotate(str.rbegin(), str.rbegin() + offset, str.rend()); //>>
+	return str;
+}
+
+int main()
+{
+	std::string input = "LET IT SNOW";
+	std::string input2 = "LET IT SNOW";
+	int offset1 = 12, offset2 = 0;
+	std::cin >> offset1;
+	std::cin >> offset2;
+
+	std::cout << std::quoted(input << offset1) << '\n';
+	std::cout << std::quoted(input2 >> offset2) << '\n';
+
+	return 0;
+}

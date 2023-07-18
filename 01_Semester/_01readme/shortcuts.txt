@@ -1,0 +1,6 @@
+settings    from   visual studio         
+strg + ,
+
+launch.jason & task.json 
+mit F5 Taste gcc und gdb ausführen
+

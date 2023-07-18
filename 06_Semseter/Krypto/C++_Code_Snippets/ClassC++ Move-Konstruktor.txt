@@ -1,0 +1,35 @@
+/* Ein Beispiel für einen Move-Konstruktor in C++:
+
+In diesem Beispiel wird die Klasse MyClass definiert, die einen Konstruktor und einen Move-Konstruktor hat.
+Im Hauptprogramm wird zunächst eine Instanz von MyClass namens obj1 erstellt. Dann wird eine zweite Instanz
+obj2 erstellt und dabei obj1 als Argument an den Move-Konstruktor übergeben.
+
+Durch den Aufruf von std::move wird obj1 als temporäres Objekt behandelt und kann so vom Move-Konstruktor 
+von obj2 verwendet werden. Der Move-Konstruktor selbst gibt nur eine Meldung aus, um zu zeigen, dass er 
+aufgerufen wurde.
+*/
+
+#include <iostream>
+#include <string>
+ 
+class MyClass 
+{
+public:
+    // Konstruktor
+    MyClass() 
+	{
+        std::cout << "Konstruktor wurde aufgerufen." << std::endl;
+    }
+ 
+    // Move-Konstruktor
+    MyClass(MyClass&& other) noexcept 
+	{
+        std::cout << "Move-Konstruktor wurde aufgerufen." << std::endl;
+    }
+};
+ 
+int main() {
+    MyClass obj1; // Konstruktor wird aufgerufen
+    MyClass obj2(std::move(obj1)); // Move-Konstruktor wird aufgerufen
+    return 0;
+}

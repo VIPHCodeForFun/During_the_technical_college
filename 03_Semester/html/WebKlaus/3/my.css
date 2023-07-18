@@ -1,0 +1,45 @@
+*{
+    
+}
+
+div.grid
+{
+display : grid;
+grid-template-columns: repeat(12,1fr);
+grid-template-rows: repeat(4, auto);
+}
+div.grid div, div.grid header{
+    
+    border: 3px;
+    border: black;
+    border-style: solid;
+    margin: 1rem;
+    height: 5rem;
+}
+header{
+    grid-column: span 12;
+}
+.x2x{
+grid-column : span 6;
+background-color: blue;
+}
+.x1{
+    grid-column: span 2;
+background-color: blueviolet;
+}
+.x2{
+    grid-column: span 7;
+    background-color: blueviolet;
+}
+.x3{
+    grid-column: span 3;
+    background-color: blueviolet;
+}
+.x4{
+    grid-column: span 2;
+    background-color: lightcoral;
+}
+.x5{
+    grid-column: span 10;
+    background-color: lightcoral;
+}

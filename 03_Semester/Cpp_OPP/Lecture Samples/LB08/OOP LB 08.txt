@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+
+class Konto {
+    double saldo;
+    std::string inhaber;
+public:
+    Konto(double saldo, std::string inhaber) : saldo{ saldo }, inhaber{ inhaber } {};
+    Konto(const Konto& other) : saldo{ other.saldo }, inhaber{ "[COPY-CTOR]" + other.inhaber }{};
+
+    Konto operator+(const Konto& toAdd) { // Überladung operator = von Konto für Kontos
+        this->saldo += toAdd.saldo;
+        return (*this);
+    }
+    Konto operator+=(const double toAdd) { // Überladung operator += von Konto für double
+        this->saldo += toAdd;
+        return (*this);
+    }
+    Konto& operator=(const Konto& other) {
+        if (this == &other) { // Gleiche Pointer, nichts machen
+            return (*this);
+        }
+        this->inhaber = "[COPY-ASSIGN]" + other.inhaber;
+        this->saldo = other.saldo;
+        return (*this);
+    }
+
+    // Deklariert als freie Funktion (kein Konto Member) um auf "right hand" Argument zuzugreifen.
+    // Friend um Zugriff auf Konto Member zu bekommen
+    friend std::istream& operator>> (std::istream& in, Konto& k);
+
+    // Über Konvertierungsfunktionen können casts bereitgestellt werden
+    operator double() const {
+        return this->saldo;
+    }
+
+    operator std::string() const {
+        return this->inhaber + ": " + std::to_string(this->saldo);
+    }
+
+    // Konvertierungsfunktionen können auch verboten werden
+    operator int() const = delete;
+};
+
+std::istream& operator>>(std::istream& in, Konto& k) {
+    std::cout << "[inhaber : string] [saldo : double]" << std::endl;
+    in >> k.inhaber >> k.saldo;
+    return in;
+}
+
+// Auch bestehende Typen (std::string) können deren Operatoren überladen bekommen
+std::string operator>> (std::string text, std::size_t paddSize) {
+    if (paddSize > text.size()) {
+        text.insert(0, paddSize - text.size(), ' ');
+    }
+    return text;
+}
+
+int main() {
+    Konto k1(555.55, "one");
+    Konto k2 = k1; // CCtor
+    k1 += 12.121212;
+
+    Konto k3{ 303.30, "three" };
+    k3 = k3 + k2;
+
+    Konto k5 = Konto(555.55, "five");
+    auto k4 = std::make_shared<Konto>(2, "four");
+    (*k4) = k5; // Zuweisugs operator, NICHT CCtor
+
+    Konto k6 = { 6,"six" };
+    std::cin >> k6;
+
+    std::string str{ "Hello World" };
+    std::cout << (str >> 20) << std::endl; // "         Hello World"
+
+    double d1 = (double)k3;
+    double d2 = k3;
+    // int i = (int)k3; // not allowed
+    std::string s = k3;
+
+    return 0;
+}

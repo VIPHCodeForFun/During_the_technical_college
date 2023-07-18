@@ -1,0 +1,115 @@
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <array>
+#include <string>
+
+enum direction {
+    up,         // int 0
+    right = 1,  // int 1
+    down,       // int 2
+    left        // int 3
+};
+
+enum class lift {
+    up,
+    down = 1,
+    // notUsed = 1 // Problem (switch case): uneindeutig
+};
+
+void UniquePtrtest(std::unique_ptr<std::string> strPtr) {}
+
+int main() {
+    // Filestreams
+    std::ofstream file("test.txt");
+    file << "Hallo \nWelt \n123ABC";
+    file.close();
+
+    std::vector<std::string> lines;
+    std::ifstream inputFile("test.txt");
+    if (inputFile.is_open()) {
+        std::string currentLine{};
+        while (std::getline(inputFile, currentLine)) {
+            lines.push_back(currentLine);
+        }
+        inputFile.close();
+    }
+
+    // Schleifen 
+    std::array<int, 5> arr{};
+    for (int i = 0; i < arr.size(); i++) {
+        arr[i] = i;
+    }
+
+    for (std::array<int, 5>::iterator it = arr.begin(); it != arr.end(); it++) {
+        (*it) = (*it) * 2;
+        // int currentElement = (*it);
+    }
+
+    for (const int& currentElement : arr) {
+        std::cout << currentElement << " ";
+    }
+    std::cout << std::endl;
+
+    // Enums
+    int dirInt = 3;
+    switch (dirInt) {
+        case 0: std::cout << "driving up" << std::endl; break;
+        case 1: std::cout << "driving right" << std::endl; break;
+        case 2: std::cout << "driving down" << std::endl; break;
+        case 3: std::cout << "driving left" << std::endl; break;
+    }
+
+    direction dir = left;
+    switch (dir) {
+        case up: std::cout << "driving up" << std::endl; break;
+        case right: std::cout << "driving right" << std::endl; break;
+        case down: std::cout << "driving down" << std::endl; break;
+        case left: std::cout << "driving left" << std::endl; break;
+    }
+
+    lift::up;
+    up;
+
+    // Smart Pointer-----------------------------------------------------------------------------
+    // Dauert etwas, auskommentieren und RAM beachten
+    /*
+    for (int i = 0; i < 10000000; i++) {
+        std::string* str = new std::string("Hello World"); // Auf Speicher achten
+        str = nullptr;
+    }
+
+    for (int i = 0; i < 5000000; i++) {
+        std::string* str = new std::string("Hello World"); // Auf Speicher achten
+        delete str;
+    }
+    */
+
+    std::shared_ptr<std::string> ptr1 = std::make_shared<std::string>("Hello World");
+    std::shared_ptr<std::string> ptr2 = ptr1;
+    auto ptr3 = ptr1;
+    int count = ptr1.use_count();
+    ptr3.reset();
+    ptr2.reset();
+    count = ptr1.use_count();
+    ptr1.reset();
+//WEAK PTR KANN EIN UND AUSGESCHALTEN WERDEN
+    auto ptr4 = std::make_shared<std::string>("Test");
+    auto ptr5 = ptr4;
+    count = ptr4.use_count();
+    std::weak_ptr<std::string> ptrWeak = ptr5;
+    count = ptr4.use_count();
+    if (auto ptr6 = ptrWeak.lock()) {
+        count = ptr4.use_count();
+    }
+    count = ptr4.use_count();
+
+//UNIQUE POINTER KANN NICHT KOPIERT WERDEN ABER VERSCHOBEN
+    std::unique_ptr<std::string> ptrUnique = std::make_unique<std::string>("ADB");
+    // auto ptrUnique2 = ptrUnique; // Geht nicht, kopieren ist verboten
+    // UniquePtrtest(ptrUnique); // Geht nicht, kopieren ist verboten
+    UniquePtrtest(std::move(ptrUnique));
+
+    return 0;
+}

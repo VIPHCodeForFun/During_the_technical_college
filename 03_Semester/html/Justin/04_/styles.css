@@ -1,0 +1,42 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    background-color: rgb(255, 215, 162);
+}
+.Headline{
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    background-color: rgb(230, 199, 28);
+    text-size-adjust: 100;
+    text-indent: 50px;
+}
+.navigation{
+    margin: 0px;
+    padding: 2px;
+    border-radius: 0;
+    background-color: rgb(189, 117, 50);
+}
+.button-navigation{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(255, 251, 0, 0.513);
+    border-left: 5px solid yellow;
+    line-height: 25px;
+}
+.info{
+    border-top: black;
+    background-color: rgb(189, 117, 50);
+}
+.pic{
+    border-radius: 50%;
+    float: left; /*Links Anhängen*/
+}
+.checkbox{
+    float: left; /*Links Anhängen*/
+}
+.size{
+    height: 200px;
+    width: 200px;
+}

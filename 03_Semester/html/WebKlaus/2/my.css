@@ -1,0 +1,47 @@
+div div{
+height: 300px;
+border: 3px;
+border-color: black;
+border-style: solid;
+}
+div.GRID{
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr) ;
+    grid-template-rows: repeat(4, auto);
+}
+.HEADER{
+    grid-column: span 12;
+    background-color: dodgerblue;
+    margin: 1rem;
+}
+
+.ARTICLE2{
+    grid-column: span 6;
+    background-color: darkcyan;
+    margin: 1rem;
+}
+.CONTENT1{
+    grid-column: span 3;
+    background-color: darkorchid;
+    margin: 1rem;
+}
+.CONTENT2{
+    grid-column: span 7;
+    background-color: darkorchid;
+    margin: 1rem;
+}
+.CONTENT3{
+    grid-column: span 2;
+    background-color: darkorchid;
+    margin: 1rem;
+}
+.FOOTER1{
+    grid-column: span 2;
+    background-color: darksalmon;
+    margin: 1rem;
+}
+.FOOTER2{
+    grid-column: span 10;
+    background-color: darksalmon;
+    margin: 1rem;
+}

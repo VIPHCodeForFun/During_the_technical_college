@@ -1,0 +1,36 @@
+/*
+In C++ können Sie Dateiein- und -ausgabe mit den Klassen "std::ifstream" und "std::ofstream" 
+der "fstream"-Bibliothek steuern. Die "std::ifstream"-Klasse wird für die Eingabe von Daten 
+aus einer Datei verwendet, während die "std::ofstream"-Klasse für die Ausgabe von Daten in 
+eine Datei verwendet wird.
+*/
+
+#include <iostream>
+#include <fstream>
+
+int main() {
+    std::ofstream outFile;
+    outFile.open("output.txt");
+
+    if (outFile.is_open()) {
+        outFile << "Dies ist eine Testausgabe in eine Datei.\n";
+        outFile.close();
+    } else {
+        std::cout << "Datei konnte nicht geöffnet werden!\n";
+    }
+
+    std::ifstream inFile;
+    inFile.open("input.txt");
+
+    if (inFile.is_open()) {
+        std::string line;
+        while (std::getline(inFile, line)) {
+            std::cout << line << std::endl;
+        }
+        inFile.close();
+    } else {
+        std::cout << "Datei konnte nicht geöffnet werden!\n";
+    }
+
+    return 0;
+}

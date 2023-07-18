@@ -1,0 +1,93 @@
+#include <iostream>
+#include <cassert>
+
+class AnyClass {};
+class MyException : public std::exception {
+public:
+    virtual const char* what() const override {
+        return "My own exception was thrown!";
+    }
+};
+
+void fakeMain(int argumentHasToBeBiggerThan10, std::string hasToBeSet) {
+    assert(argumentHasToBeBiggerThan10 > 10 && "Argument was smaller 10"); // && is kind of a hack but gives more information to asserts
+    assert(hasToBeSet != "" && "Argument was not set");
+
+    std::cout << "All is used fine" << std::endl;
+}
+
+int main() {
+    // static_assert("Run Program" == "Do nor run Program", "Static assert failed"); // Will give handy compiling errors
+
+    // Exceptions are thrown in try blocks and cought by catch
+    try {
+        AnyClass object; // Realise the object is only decleared and not initialized
+        throw object; // Initialization happens in throw
+    }
+    catch(AnyClass& exceptionObject) { // Handle Exception Object
+        std::cout << "AnyClass Exception Object caught" << std::endl;
+    }
+
+    // for (int i = 0; i < 100000; i++) {
+        try {
+            AnyClass* object = new AnyClass();
+            throw object; // Throwing the pointer and catching as object (dereferced) is not allowed - Different Types
+            delete object;
+        }
+        // catch (AnyClass exceptionObject) {
+        catch (AnyClass* exceptionObject) { // Catching a pointer as a pointer works but should only be done using smart
+            // pointers since the pointer gets copied in catch and has to be deleted correctly (Uncomment loop and view process memory)
+            std::cout << "AnyClass Exception Object caught" << std::endl;
+        }
+    // }
+
+    /* Enables throwing pointers
+    for (int i = 0; i < 100000; i++) {
+        try {
+            std::shared_ptr<AnyClass> object = std::make_shared<AnyClass>();
+            throw object; // Throwing the pointer and catching as object (dereferced) is not allowed - Different Types
+            // object.reset(); // Not needed due to stack unwinding! Data is now nicely deleted
+        }
+        // catch (AnyClass exceptionObject) {
+        catch (std::shared_ptr<AnyClass> exceptionObject) { // Catching a pointer as a pointer works but should only be done using smart
+            // pointers since the pointer gets copied in catch and has to be deleted correctly (Uncomment loop and view process memory)
+            std::cout << "AnyClass Exception Object caught" << std::endl;
+        }
+    }
+    */
+
+    // Exceptions can be thrown again in catch without copying
+    try {
+        try {
+            std::string("abc").substr(10); // throws invalid strng position
+        }
+        catch (const std::exception& exception) {
+            std::cout << exception.what() << std::endl; // Exception objects should inherit from std::exception and overwrite what()
+            std::cout << "Rethrowing" << std::endl;
+            throw; // Exception rethrow
+        }
+    }
+    catch (int& someException) { std::cout << someException << std::endl; }
+    catch (...) { // Ellipsis operator, catches everything else. Use as last catch statement
+        std::cout << "Some Exception was caught in ellipsis catch" << std::endl;
+    }
+
+    // Exceptions can be caught as their base classes (polymorphismn)
+    try {
+        MyException e;
+        throw e;
+    }
+    catch (std::exception& e) { std::cout << e.what() << std::endl; }
+
+    try {
+        MyException e;
+        throw e;
+    }
+    catch (MyException& e) { std::cout << e.what() << std::endl; }
+
+    fakeMain(12, "hello");
+    // fakeMain(5, "hello");
+    // fakeMain(12, "");
+
+    return 0;
+}

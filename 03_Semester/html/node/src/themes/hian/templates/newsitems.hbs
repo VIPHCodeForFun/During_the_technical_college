@@ -1,0 +1,9 @@
+<div class="news-items-wrap uk-text-center" uk-grid>
+    <!-- note the triple brackets - its for handling html within the string data - title in this case - it will display properly if it contains html -->    
+    <div class="news-items-header uk-column-1-2@m"><form class="search-form"><fieldset class="uk-fieldset"><input class="uk-input" type="text" name="search-input"/></fieldset></form><h2>{{{title}}}</h2></div>
+    <div class="news-items uk-text-center" uk-grid>
+        {{#each items}}
+            {{> app.templates.newsitem}}
+        {{/each}}
+    </div>
+</div>

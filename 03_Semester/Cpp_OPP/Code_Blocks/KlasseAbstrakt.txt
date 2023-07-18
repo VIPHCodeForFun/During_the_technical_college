@@ -1,0 +1,10 @@
+class TimeServerInterface
+{
+	virtual unsigned long getCurrentTime(unsigned long x) = 0;
+};
+
+class TimeServerAbstrakteClasse
+{
+	unsigned long x;
+	virtual unsigned long getCurrentTime(unsigned long x) = 0;
+};

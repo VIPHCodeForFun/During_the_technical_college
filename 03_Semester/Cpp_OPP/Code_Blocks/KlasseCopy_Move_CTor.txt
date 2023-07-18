@@ -1,0 +1,31 @@
+#pragma once
+#include <iostream>
+class Rechteck
+{
+protected:
+	int sideA;
+	int sideB;
+public:
+	Rechteck(int _sideA, int _sideB) :sideA{ _sideA }, sideB{ _sideB } {}
+	Rechteck(const Rechteck& copy){
+		this->sideA = copy.sideA;
+		this->sideB = copy.sideB;
+	}
+	Rechteck(Rechteck&& moveObj) noexcept: sideA{ std::move(moveObj.sideA) }, sideB{ std::move(moveObj.sideB) } {}
+};
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+#pragma once
+#include "Rechteck.h"
+
+class Quadrat :
+    public Rechteck
+{
+public:
+	Quadrat(int a):Rechteck(a,a){}
+	Quadrat(const Quadrat& copy) :Rechteck(copy) {}
+	Quadrat(Quadrat&& const _move) noexcept :Rechteck(std::move(_move)) {}
+};
+

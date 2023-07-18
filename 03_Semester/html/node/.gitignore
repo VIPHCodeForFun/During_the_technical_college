@@ -1,0 +1,6 @@
+node_modules/
+src/node_modules/
+notes.txt
+web/api/index.php
+web/crud/api.php
+src/themes/*/js/templates.js

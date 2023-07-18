@@ -1,0 +1,41 @@
+/* Das ist ein kommenar in CSS */
+h2{
+    border: 5px solid yellow;
+}
+p {
+    /*p = CSS Selektor 
+    
+    * UNIVERSALSELEKTOR styled jedes element = *{ Wertung D 
+    . KLASSEN   (sind wie Gruppen)
+    # IDs       (eindeutig)
+    
+    */
+    color: green;
+}
+
+.class {
+    /*KLASSE Wertung C*/
+    background-color: blueviolet;
+}
+
+#id {
+    /*ID Wertung B*/
+    position: fixed; /*Position*/ 
+    bottom: 0;  /* abstand vom boden = 0*/
+    right: 0;   /*abstand von rechts = 0*/
+    width: 300px;
+
+    font-family: Arial, Helvetica, sans-serif; /*Schriftart*/
+    text-align: center; /*Text zentrieren */
+    color: white; /*Schriftfarbe*/
+    border: wheat; /*Umrandung*/
+    background-color: tomato; /*Hintergrund Fabe*/
+    
+    margin: 10px; /*Außeneinrückung abstand*/
+    border: 10px; /*Abbmessung Rahmen*/
+    padding: 5px; /*Innenabtand*/
+}
+body section h2{
+background-color: rgb(133, 0, 0);
+
+}

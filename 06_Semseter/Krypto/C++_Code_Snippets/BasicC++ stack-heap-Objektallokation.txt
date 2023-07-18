@@ -1,0 +1,56 @@
+// Stackbasierte Objektallokation:
+
+#include <iostream>
+
+int main() 
+{
+    int num = 10; // Auf dem Stack allokiertes Objekt
+    std::cout << "Die Variable 'num' hat den Wert " << num << std::endl;
+    return 0;
+}
+
+
+// Heapbasierte Objektallokation:
+
+#include <iostream>
+
+int main() 
+{
+    int* ptr = new int; // Auf dem Heap allokiertes Objekt
+    *ptr = 20; 			// Setzen des Werts über den Zeiger
+    std::cout << "Der Wert auf den 'ptr' zeigt, lautet " << *ptr << std::endl;
+    delete ptr; 		// Freigabe des Speichers
+    return 0;
+}
+
+INFO:
+
+Speicherort: 
+Objekte, die auf dem Stack allokiert werden, befinden sich im Stack-Speicherbereich 
+des Programms, während Objekte, die auf dem Heap allokiert werden, im Heap-Speicherbereich des 
+Programms platziert werden.
+
+Lebensdauer: 
+Objekte, die auf dem Stack allokiert werden, haben eine begrenzte Lebensdauer, 
+die auf den Gültigkeitsbereich (Scope) beschränkt ist, in dem sie deklariert wurden. Wenn der
+Gültigkeitsbereich endet, wird das Objekt automatisch freigegeben. Objekte, die auf dem Heap 
+allokiert werden, haben hingegen eine längere Lebensdauer und bleiben im Speicher, bis sie explizit 
+freigegeben werden.
+
+Zugriff: 
+Der Zugriff auf auf dem Stack allokierte Objekte ist schneller als auf dem Heap 
+allokierte Objekte, da der Zugriff auf den Stack schneller ist als der Zugriff auf den Heap. 
+Auf dem Heap allokierte Objekte können jedoch über einen längeren Zeitraum verwendet werden und 
+sind auch von verschiedenen Bereichen des Programms aus zugänglich.
+
+Speicherfragmentierung: 
+Heap-Speicher kann fragmentiert werden, wenn viele Objekte allokiert und 
+freigegeben werden. Dies kann dazu führen, dass der Heap-Speicherplatz unorganisiert wird und 
+Speicherbereiche frei bleiben, aber nicht verwendet werden können. Auf dem Stack allokierte Objekte 
+führen nicht zu Fragmentierung, da der Stack-Speicherbereich statisch ist und immer der Größe des 
+Programms entspricht.
+
+Größe: 
+Die Größe der auf dem Stack allokierten Objekte ist normalerweise statisch zur Kompilierzeit 
+bekannt, während die Größe der auf dem Heap allokierten Objekte dynamisch zur Laufzeit bestimmt wird. 
+Dies bedeutet, dass die Größe der auf dem Heap allokierten Objekte zur Laufzeit geändert werden kann.

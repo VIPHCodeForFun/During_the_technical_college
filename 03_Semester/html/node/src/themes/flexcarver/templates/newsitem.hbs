@@ -1,0 +1,8 @@
+{{^innerRender}}<div data-id="{{id}}" data-idx="{{@index}}" class="uk-card uk-card-default uk-card-body uk-width-1-{{#if single}}1{{else}}3{{/if}}@m"{{#if single}} style="padding: 0 20px 20px 20px; margin: 0"{{/if}}>{{/innerRender}}
+    {{#single}}<div id="newsitem_close_wrap" class="uk-width-1-1"><button id="newsitem_close" class="uk-close-large" type="button" uk-close></button></div>{{/single}}
+    <div class="newsitem-banner" style="border-top: 8px solid {{color}}">
+        <img src="/img/{{image}}">
+        <h3>{{{header}}}</h3>
+    </div>            
+    <div class="newsitem-text">{{{text}}}</div>
+{{^innerRender}}</div>{{/innerRender}}

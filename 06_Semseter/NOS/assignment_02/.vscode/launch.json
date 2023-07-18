@@ -1,0 +1,57 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "externalConsole": true,
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "DemoMainClass",
+            "request": "launch",
+            "mainClass": "DemoMainClass",
+            "projectName": "assignment_02_a90d1253"
+        },
+        {
+            "type": "java",
+            "name": "TestAssingmentA",
+            "request": "launch",
+            "mainClass": "TestAssingmentA",
+            "projectName": "assignment_02_a90d1253"
+        },
+        {
+            "type": "java",
+            "name": "TestAssingmentB",
+            "request": "launch",
+            "mainClass": "TestAssingmentB",
+            "projectName": "assignment_02_a90d1253"
+        },
+        {
+            "type": "java",
+            "name": "TreeNode",
+            "request": "launch",
+            "mainClass": "TreeNode",
+            "projectName": "assignment_02_a90d1253"
+        },
+        {
+            "type": "java",
+            "name": "CastClass",
+            "request": "launch",
+            "mainClass": "at.ac.fhsalzburg.win.nos.CastClass",
+            "projectName": "assignment_02_a90d1253"
+        },
+        {
+            "type": "java",
+            "name": "PolymorphismDemoClass",
+            "request": "launch",
+            "mainClass": "at.ac.fhsalzburg.win.nos.PolymorphismDemoClass",
+            "projectName": "assignment_02_a90d1253"
+        }
+    ]
+}

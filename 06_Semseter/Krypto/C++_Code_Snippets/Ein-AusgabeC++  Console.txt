@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    int x;
+
+    // Textausgabe
+    std::cout << "Geben Sie eine Zahl ein: ";
+
+    // Texteingabe
+    std::cin >> x;
+
+    // Textausgabe mit variabler
+    std::cout << "Die eingegebene Zahl ist: " << x << std::endl;
+
+    return 0;
+}

@@ -1,0 +1,80 @@
+----------------------------------------------------USER Information
+SELECT * FROM USER_CONSTRAINTS
+----------------------------------------------------Tabelle Erstellen
+CREATE TABLE "name" ( "name",PRIMARY KEY ("name"))
+  "ID" INTEGER NOT NULL,
+  "name" VARCHAR2(30) NOT NULL,
+  "name" DATE NOT NULL, 
+  "name" CHAR(2) NOT NULL,
+  "name" NUMERIC(7, 2), 
+  PRIMARY KEY("ID")
+----------------------------------------------------Tabelle Spalte einfügen
+INSERT INTO "name" ("sp1", "sp2") VALUES ("sp1" , "sp2")
+----------------------------------------------------Tabelle Spalte löschen
+DELETE FROM table_name WHERE condition;
+----------------------------------------------------Tabelle Ändern bzw Datentypen
+ALTER TABLE "name" ADD ("name" data_type , "name" data_type)		  
+----------------------------------------------------Tabelle Einträge_überschreiben
+UPDATE "name" SET "name"="name", ...
+WHERE "name" = 
+----------------------------------------------------TABELLE Löschen
+DROP TABLE "name";
+--------------------------------------------------------------------------------------------------------
+----------------------------------------------------Tabelle Azeigen Allgemien
+SELECT * FROM "name" WHERE
+----------------------------------------------------Zusamenfügen 2 SELECTS
+UNION
+----------------------------------------------------Schnittmenge 2 SELECTS
+INTERSECT
+----------------------------------------------------Menge Abziehen 2 SELECTS
+MINUS
+----------------------------------------------------Keine Dubletten
+SELECT DISTINCT * FROM "name" WHERE
+----------------------------------------------------Joins
+FROM "name" INNER JOIN  ON
+FROM "name" LEFT OUTER JOIN  ON
+FROM "name" RIGHT OUTER JOIN  ON
+FROM "name" FULL OUTER JOIN  ON
+----------------------------------------------------Agregatsfunktionen
+SELECT "name", COUNT(*)
+SELECT "name", MIN(*)
+SELECT "name", MAX(*)
+SELECT "name", AVG(*)
+SELECT "name", SUM(*)
+GROUP BY "name"
+---------------------------------------------------- NULL ersetzen
+SELECT "name", NVL("para", "replacewith")
+----------------------------------------------------Grupieren
+GROUP BY "name"
+HAVING 
+----------------------------------------------------Fälle unterscheiden
+IF("condition", "value_true", "value_false")
+CASE
+    WHEN "name" THEN "name"
+    ELSE result
+END AS "name"
+----------------------------------------------------SUPQUERY
+WHERE EXISTS (SELECT * FROM WHERE)
+----------------------------------------------------String Suchen
+WHERE "name" LIKE '%ST%' (oder'______ %')
+----------------------------------------------------Sortieren
+ORDER BY "name" 	DESC 	/*absteigend*/
+					ASC		/*aufsteigend*/
+----------------------------------------------------Anzahl an Zeilen
+FETCH FIRST 7 ROWS ONLY
+SELECT * FROM (SUPQUERY) WHERE ROWNUM <=7 
+----------------------------------------------------Umwandlungen
+TO_CHAR(e.HIRE_DATE, 'DD.MM.YYYY')
+TO_CHAR(SYSDATE, 'DD.MM.YYYY HH24:MI:SS')
+TO_DATE( "string" , 'DD.MM.YYYY')
+----------------------------------------------------STINGS
+CONCAT("string1","string2")
+SUBSTR("string", start, length)
+INSTR("string", "suche") --Gibt anzahl Zurück
+LENGHT("string")
+TRIM("string", 'trim')
+UPPER("string")
+LOWER("string")
+ROUND("nummer")
+REPLACE ("nummer", "replace", "with")
+

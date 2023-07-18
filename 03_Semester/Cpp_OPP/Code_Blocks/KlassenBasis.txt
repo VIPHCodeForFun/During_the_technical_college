@@ -1,0 +1,15 @@
+class Myclass
+{
+private: 	//nur für die klasse zugänglich
+
+protected: 	//für Kinder sichtbar
+
+public: 	//Für alle sichtbar
+
+Myclass()= default 	// Ctor
+~Myclass() = default 	// Dtor
+
+Myclass(const Myclass& copy); //CCtor
+Myclass(Myclass&& move) noexcept; //Move
+
+};

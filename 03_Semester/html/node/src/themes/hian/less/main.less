@@ -1,0 +1,169 @@
+html{
+  background: transparent url('/img/index_0.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  /*
+    big shock for me :-) :
+    all modern browsers seem to handle this, except for firefox ...
+  */
+  transition: background-image 5s;
+  -webkit-transition: background-image 5s;
+
+}
+
+.hian-vcenter{
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+div.hian-home-card{
+  opacity: 0;
+  background-color: fade(#fff, 80%);
+  padding: 20px;
+  /* added an anmation to test the autoprefixer */
+  animation: homecardmove 2s forwards;
+  animation-delay: 1s;
+
+  p.uk-text-small{
+    color: #7f8181;
+
+  }
+
+}
+
+
+@keyframes homecardmove
+{
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  100% {
+    top: 42%;
+    opacity: 1;
+  }
+}
+
+/* select all page divs for an opacity css transition if needed - like for the API Example */
+div[data-mainnav]{
+  transition: opacity 0.5s ease;
+
+}
+
+div.news-items-header{
+  width: 100%;
+  padding: 1rem 0 .8rem 20px;
+  margin-bottom: 0rem;
+  background-color: #fff;
+
+}
+
+form.search-form{
+  height: 2rem;
+  width: 240px;
+  input{
+    background: #f8f8f8 url('/api/svg?img=search&color=ccc') no-repeat 210px center;
+    background-size: 20px 20px;
+
+  }
+
+}
+
+
+div.news-items-wrap{
+  margin: 0 auto;
+  padding: 4rem 1rem 1rem 1rem;
+
+  div.uk-card{
+    margin-top: 0;
+
+  }
+
+}
+div.news-items{
+  margin-top: 0 !important;
+
+}
+div.newsitem-banner{
+  margin-top: 1rem;
+  h3{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    height: 2.5rem;
+    text-align: left;
+    padding-left: 1.2rem;
+    box-sizing: border-box;
+    margin: -2.5rem 0 1rem 0;
+    color: #fff;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+64 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 64%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 64%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 64%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+  }
+  img{
+    position: relative;
+    z-index: 4;
+    width: 100%;
+
+  }
+
+}
+
+div.hian-newsitem:not(.newsitem-detail) div.newsitem-banner{
+  h3, img{
+    cursor: zoom-in;/* cause we can click for a detail view if the items is shown in the list */
+  }
+}
+
+div#newsitem_close_wrap{
+  text-align: right !important;
+
+}
+button#newsitem_close{
+  display: inline-block;
+  margin: 12px 12px 0px 10px !important;
+
+}
+
+div.newsitem-text{
+  text-align: left;
+  padding-left: 1.2rem;
+  margin: 0 -1.2rem 2rem 0;
+  width: 100%;
+
+}
+
+
+mark.search-result{
+  background-color: #badc58;
+
+}
+
+/* utility classes home made */
+.hian-hide{
+  display: none;
+
+}
+.hian-opa-0{
+  opacity: 0;
+
+}
+/*
+.loader-oval{
+  background: transparent url('/img/oval.svg') no-repeat center center;
+  background-size: 38px 38px;
+
+}*/
+input.loader-oval{
+  background: transparent url('/img/oval.svg') no-repeat 210px center !important;
+  background-size: 20px 20px !important;
+
+}

@@ -1,0 +1,15 @@
+// + 
+Myclass operator+(Myclass& toAdd) 
+{
+	Myclass temp;
+	temp.a = this->a + toAdd.a;
+	temp.b = this->b + toAdd.b;
+	return temp;
+}
+// - 
+Myclass operator-(Myclass& toAdd) 
+{
+	this->a = this->a - toAdd.a;
+	this->b = this->b - toAdd.b;
+	return (*this);
+}

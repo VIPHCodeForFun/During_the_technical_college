@@ -1,0 +1,38 @@
+//ENUM ERSTELLEN
+enum Xenum {
+	eins,
+	zwei,
+	drei,
+	vier,
+	END_CO	// zum durchlaufen des ENUMS
+};
+//ENUM Klasse ERSTELLEN
+enum class Xenumclass {
+	eins,
+	zwei,
+	drei,
+	vier,
+	END_CO	// zum durchlaufen des ENUMS
+};
+
+//VARIABLE ANLEGEN
+xenum Variable;
+
+//ENUM EINEN WERT ZUWEISEN
+std::string FunktionZuweisen(Xenum elem)
+{
+	switch (elem)
+	{
+	case eins: return "ASS";
+	case zwei:return "2";
+	case drei:return "3";
+	case vier:return "4";
+	default:
+		break;
+	}
+}
+
+//FOR MIR ENUMS
+for (i = Xenum::eins ; i < Xenum::END_CO; i++)
+{
+}

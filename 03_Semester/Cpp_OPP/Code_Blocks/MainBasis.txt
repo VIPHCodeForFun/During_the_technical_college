@@ -1,0 +1,16 @@
+//Philipp Vidmar, C++
+//Strg + d: Zeile nach unten Kopieren
+//Strg + k + c Zeile Kommentieren
+//Strg + k + u Zeile Auskommentieren
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+
+int main(int argc, char *argv[])
+{
+
+return 0;
+}

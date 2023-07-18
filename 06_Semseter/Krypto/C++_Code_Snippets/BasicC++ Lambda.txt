@@ -1,0 +1,14 @@
+auto landba = [](std::vector<T> _vec)
+{
+	std::vector<T> temp;
+	if (_vec.size() % 2 == 0) //ist gerade
+	{
+		temp.push_back(_vec[_vec.size() / 2 - 1]);
+		temp.push_back(_vec[_vec.size() / 2]);
+	}
+	else
+	{
+		temp.push_back(_vec[_vec.size() / 2]);
+	}
+	return temp;
+};

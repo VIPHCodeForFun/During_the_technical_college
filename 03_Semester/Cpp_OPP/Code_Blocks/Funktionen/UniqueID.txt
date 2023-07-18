@@ -1,0 +1,35 @@
+class IDclass
+{
+private:
+	const int ID;
+protected:
+public:
+	IDclass() : ID{ getUniqueID() } {}
+
+	int getUniqueID()
+	{
+		static int id = 0;
+		id++;
+		return id;
+	}
+};
+//-----------------//-----------------//-----------------
+/*
+in der IDclass.cpp initialisieren
+#include "IDclass.h"
+int IDclass::uniqueID = 0;
+*/
+class IDclass
+{
+public:
+	IDclass() : id{ getId() } {}
+
+	int getId() 
+	{
+		return IDclass::uniqueID++;
+	}
+protected:
+private:
+	int id;
+	static int uniqueID;
+};

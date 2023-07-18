@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1. Testseite</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+
+</head>
+
+<!--vw viewport with-->
+
+<body>
+    <h1>Hallo</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6" style="border: 1px red solid">
+                <!--12Raster col=3 3/12 größe-->
+                1.spalte
+            </div>
+            <div class="col-lg-3 col-sm-6" style="border: 1px green solid">
+                2.spalte
+            </div>
+        </div>
+        <div id="button-container" class="row">
+            <button>Klick mich</button>
+        </div>
+    </div>
+    <div id="banner-message" style="display: none; position: absolute; top:100px; width: 500px; background-color: red;">
+        BANNER BANNER
+    </div>
+    <script>
+        //JS JavaSkript
+        var hiddenBox = jQuery("#banner-message");
+        jQuery('#button-container button').on("click", function (event) {
+            hiddenBox.toggle();
+            console.log("!"); // Fehlersuchen
+        });
+    </script>
+</body>
+
+</html>

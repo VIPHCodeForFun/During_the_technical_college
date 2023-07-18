@@ -1,0 +1,19 @@
+//FUNKTIONSTEMPLATE
+template <typename T>
+T Tfunktion(T Typ1, T Typ2)
+{
+	return Typ1 + Typ2;
+}
+
+//KLASSEMTEMPLATE
+template <typename T, typename N>
+class Tclass
+{
+private:
+	T Typ1;
+	N Typ2;
+protected:
+public:
+	Tclass() = default;
+	~Tclass() = default;
+};

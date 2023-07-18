@@ -1,0 +1,17 @@
+/*
+Insgesamt demonstriert dieser Code, wie man eine Ausnahme wirft 
+und wie man sie in einem catch-Block abfängt und darauf reagiert.
+*/
+
+int elem = 0;
+try 
+{
+	if (elem == 0)
+	{
+		throw std::exception("Trow String");
+	}
+}
+catch (const std::exception& exeption)
+{
+	std::cout << "Catch String " << exeption.what() << std::endl;
+}

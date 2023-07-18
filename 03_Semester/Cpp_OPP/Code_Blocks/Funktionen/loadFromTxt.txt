@@ -1,0 +1,18 @@
+//#include <fstream> 
+//#include <string>
+void loadFromTxt(std::vector<int>& data, std::string path)
+{
+	std::ifstream iFile;
+	iFile.open(path);
+	if (iFile.is_open())
+	{
+		std::string buffer;
+
+		while (getline(iFile, buffer))
+		{
+			data.push_back(std::stoi(buffer));
+		}
+	}
+	iFile.close();
+	return;
+}

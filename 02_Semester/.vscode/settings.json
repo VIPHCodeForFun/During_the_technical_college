@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "pthread.h": "c",
+        "main.h": "c",
+        "iostream": "cpp"
+    }
+}

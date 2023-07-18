@@ -1,0 +1,21 @@
+//#include <iostream> 
+
+char* make_timestamp(char* Timestamp)
+{
+	std::time_t Dummy = std::time(NULL);			// Zeitstempel Funktion: (std::time gibt Zeit seit 1970 zurück (in Type time_t)
+	std::time_t* Dummy2 = &Dummy;				// Pointer auf diese Zeit
+	tm* _timestamp = new tm;				// struct tm ist ein bereits Vorformatierter Datentyp mit allen möglichen Zeitformaten wie JJJJ:MM:DD etc.
+								// (siehe Cplusplus.com)
+	localtime_s(_timestamp, Dummy2);			// localtime_s wandelt nun die Zeit seit 1970 in ein Aktulles Datum und Uhrzeit um. 
+	strftime(Timestamp, 100, "[%F] [%T]", _timestamp);	// strftime macht anschließend aus dem time_t Datentyp einen String.  
+	return Timestamp;
+}
+
+
+/*int main()
+{
+	char Dummy[100];
+	char* Timestamp = make_timestamp(Dummy);
+
+	std::cout << Timestamp << std::endl; 
+}*/

@@ -1,0 +1,43 @@
+#jumbotron 
+{      
+      background-image: url('../images/back.jpg');
+      background-position: center bottom;
+      background-size: cover;
+      height: 200px; 
+      width: 100%;
+}
+p{
+    text-align: center;
+}
+
+.row 
+{
+    background-color: gray;
+}
+div.col-lg-6{
+    background-color: tomato;
+}
+
+div[class^="col-"]/*  ^= classen die mit "col-" beginnen*/
+{
+    background-color: yellowgreen;
+}
+.post-content{
+    background-image: url('../images/S1.jpg');
+    background-position: center;
+    height: 500px;
+    
+}
+
+#jumbotron div[class^="col-"],
+#jumbotron .row {background-color:  transparent;}
+
+h1, h2 , h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (min-width:768px) {
+    #jumbotron {
+    height: 500px;
+    }
+}

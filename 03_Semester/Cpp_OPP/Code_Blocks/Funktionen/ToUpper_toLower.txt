@@ -1,0 +1,16 @@
+//für std::vector<char>
+void toUpper() {
+	for (auto& elem : vec)
+	{
+		if (elem >= 'a' && elem <= 'z')
+		elem = elem + ('A' - 'a');
+	}
+}
+//für std::vector<char>
+void toLower() {
+	for (auto& elem : vec)
+	{
+		if (elem >= 'A' && elem <= 'Z')
+			elem = elem - ('A' - 'a');
+	}
+}

@@ -1,0 +1,15 @@
+void saveToTxt(std::vector<int> toSave, std::string path)
+{
+	std::ofstream oFile;
+	oFile.open(path); // überschreibt das FILE!
+
+	if (oFile.is_open())
+	{
+		for (auto elem : toSave)
+		{
+			oFile << elem << "\n"; 
+		}
+	}
+	oFile.close();
+	return;
+}

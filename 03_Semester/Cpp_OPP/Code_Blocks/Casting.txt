@@ -1,0 +1,23 @@
+//CASTEN
+//STATIC Erzeugt einen anderen Typen
+
+int Data = static_cast <int> (6.4);
+
+//CONST damit kann "const" aufgehoben werden.
+
+const int ConstVariable = 5;
+int* ptr = const_cast<int*>(&ConstVariable);
+(*ptr) = 10
+
+//DINAMIC damit kann zur runtime abgefragt werden 
+
+class Parent { public: virtual ~Parent() {} };
+
+class ChildA : public Parent {};
+class ChildB : public Parent {};
+
+Parent* ptrCast = new ChildA;
+if (dynamic_cast<ChildA*>(ptrCast) != 0)
+{
+	std::cout << "is a Child A" << std::endl;
+}
